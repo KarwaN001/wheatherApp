@@ -32,8 +32,8 @@
                                                     <constraint firstAttribute="height" constant="34" id="location-btn-height"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="location.circle" catalog="system"/>
+                                                <state key="normal"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="location.circle" catalog="system" title=""/>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for a city..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y54-63-J6g">
                                                 <rect key="frame" x="65.666666666666671" y="0.0" width="237.66666666666663" height="40"/>
@@ -53,8 +53,8 @@
                                                     <constraint firstAttribute="height" constant="34" id="search-btn-height"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                                                <state key="normal"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" title=""/>
                                                 <connections>
                                                     <action selector="SearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4KT-82-7dO"/>
                                                 </connections>
