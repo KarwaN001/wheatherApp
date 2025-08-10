@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , UITextFieldDelegate{
 
     @IBOutlet weak var SearchField: UITextField!
     @IBOutlet weak var whatherIcon: UIImageView!
@@ -16,13 +16,29 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        SearchField.delegate = self
     }
 
+    
+    
     @IBAction func SearchButton(_ sender: UIButton) {
 //        print(SearchField.text!)
         whetherCity.text = SearchField.text
+        SearchField.text = ""
+        SearchField.endEditing(true)
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        whetherCity.text = SearchField.text
+        textField.resignFirstResponder()
+        SearchField.endEditing(true)
+        SearchField.text = ""
+        return true
+    }
+    
+    
+    
     
 }
 
