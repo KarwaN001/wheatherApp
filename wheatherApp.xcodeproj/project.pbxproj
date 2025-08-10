@@ -13,6 +13,7 @@
 		9C975CAC2E48C97E00ABEC0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C975CAA2E48C97E00ABEC0B /* Main.storyboard */; };
 		9C975CAE2E48C98100ABEC0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C975CAD2E48C98100ABEC0B /* Assets.xcassets */; };
 		9C975CB12E48C98100ABEC0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C975CAF2E48C98100ABEC0B /* LaunchScreen.storyboard */; };
+		9CB3FB612E493054007B8310 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3FB602E493054007B8310 /* WeatherManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9C975CAD2E48C98100ABEC0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C975CB02E48C98100ABEC0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C975CB22E48C98100ABEC0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CB3FB602E493054007B8310 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				9C975CA62E48C97D00ABEC0B /* SceneDelegate.swift */,
 				9C975CA82E48C97D00ABEC0B /* ViewController.swift */,
 				9C975CAA2E48C97E00ABEC0B /* Main.storyboard */,
+				9CB3FB602E493054007B8310 /* WeatherManager.swift */,
 				9C975CAD2E48C98100ABEC0B /* Assets.xcassets */,
 				9C975CAF2E48C98100ABEC0B /* LaunchScreen.storyboard */,
 				9C975CB22E48C98100ABEC0B /* Info.plist */,
@@ -140,6 +143,7 @@
 			files = (
 				9C975CA92E48C97D00ABEC0B /* ViewController.swift in Sources */,
 				9C975CA52E48C97D00ABEC0B /* AppDelegate.swift in Sources */,
+				9CB3FB612E493054007B8310 /* WeatherManager.swift in Sources */,
 				9C975CA72E48C97D00ABEC0B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
