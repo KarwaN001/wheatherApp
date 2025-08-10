@@ -15,6 +15,8 @@ class ViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var whetherTempreture: UILabel!
     @IBOutlet weak var whetherCity: UILabel!
     
+    var weatherManager = WeatherManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +27,6 @@ class ViewController: UIViewController , UITextFieldDelegate{
     
     @IBAction func SearchButton(_ sender: UIButton) {
 //        print(SearchField.text!)
-        whetherCity.text = SearchField.text
         SearchField.endEditing(true)
     }
     
@@ -44,7 +45,11 @@ class ViewController: UIViewController , UITextFieldDelegate{
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+
         whetherCity.text = textField.text
+        if let city = SearchField.text {
+            weatherManager.fetchWheather(city)
+        }
         textField.text = ""
         textField.resignFirstResponder()
     }
