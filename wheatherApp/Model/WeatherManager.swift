@@ -7,8 +7,12 @@
 
 import Foundation
 
+protocol WeatherManagerDelegate {
+    func didUpdateWeather(_ weather: WeatherModel)
+}
+
 struct WeatherManager {
-    
+    var delegate: WeatherManagerDelegate?
     let WheatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=a89bad3a6d3f947a4faaad85523560da&units=metric"
     
     func fetchWheather(_ cityName: String){
@@ -30,7 +34,7 @@ struct WeatherManager {
                 }
                 if let safeData = data {
                     if let weather = self.parseJSON(safeData) {
-                        
+                        self.delegate?.didUpdateWeather(weather)
                         
                         //test test test test 
                         // var testWeatherVC = ViewController()

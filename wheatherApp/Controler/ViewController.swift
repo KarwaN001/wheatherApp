@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController , UITextFieldDelegate{
+class ViewController: UIViewController , UITextFieldDelegate, WeatherManagerDelegate{
 
     @IBOutlet weak var SearchField: UITextField!
     @IBOutlet weak var whatherIcon: UIImageView!
     @IBOutlet weak var whetherTempreture: UILabel!
     @IBOutlet weak var whetherCity: UILabel!
+    @IBOutlet weak var weatherDescreption: UILabel!
     
     var weatherManager = WeatherManager()
     
@@ -21,6 +22,7 @@ class ViewController: UIViewController , UITextFieldDelegate{
         super.viewDidLoad()
         
         SearchField.delegate = self
+        weatherManager.delegate = self
     }
 
     
@@ -52,12 +54,21 @@ class ViewController: UIViewController , UITextFieldDelegate{
         textField.text = ""
         textField.resignFirstResponder()
     }
-    
-    func test(weather: WeatherModel) {
+
+    func didUpdateWeather(_ weather: WeatherModel) {
         DispatchQueue.main.async {
-            print(weather.temperatureString , weather.cityName)
+            self.whetherTempreture.text = weather.temperatureString
+            self.whetherCity.text = weather.cityName
+            self.whatherIcon.image = UIImage(systemName: weather.conditionName)
+            self.weatherDescreption.text = weather.description
         }
     }
+    //test test test test 
+    // func test(weather: WeatherModel) {
+    //     DispatchQueue.main.async {
+    //         print(weather.temperatureString , weather.cityName)
+    //     }
+    // }
     
 }
 
