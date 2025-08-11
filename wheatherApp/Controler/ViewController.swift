@@ -57,7 +57,7 @@ class ViewController: UIViewController , UITextFieldDelegate, WeatherManagerDele
 
     func didUpdateWeather(_ weather: WeatherModel) {
         DispatchQueue.main.async {
-            self.whetherTempreture.text = weather.temperatureString
+            self.whetherTempreture.text = "\(weather.temperatureString)°C"
             self.whetherCity.text = weather.cityName
             self.whatherIcon.image = UIImage(systemName: weather.conditionName)
             self.weatherDescreption.text = weather.description
