@@ -46,10 +46,9 @@ class ViewController: UIViewController , UITextFieldDelegate{
     
     func textFieldDidEndEditing(_ textField: UITextField) {
 
-        whetherCity.text = textField.text
         if let city = SearchField.text {
             weatherManager.fetchWheather(city)
-        }
+        }  
         textField.text = ""
         textField.resignFirstResponder()
     }
