@@ -136,6 +136,7 @@
                     </view>
                     <connections>
                         <outlet property="SearchField" destination="Y54-63-J6g" id="YeA-3g-gNq"/>
+                        <outlet property="weatherDescreption" destination="weather-description" id="1nY-Ez-Bjh"/>
                         <outlet property="whatherIcon" destination="XCD-eY-NF0" id="TiV-tA-MG3"/>
                         <outlet property="whetherCity" destination="Wa4-in-TNv" id="oi5-0i-G1U"/>
                         <outlet property="whetherTempreture" destination="ySc-U0-VH6" id="4tY-2R-E2c"/>
