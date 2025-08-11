@@ -28,7 +28,10 @@ struct WeatherManager {
                     return
                 }
                 if let safeData = data {
-                    self.parseJSON(safeData)  
+                    if let weather = self.parseJSON(safeData) {
+                        var testWeatherVC = ViewController()
+                        testWeatherVC.test(weather: weather)
+                    }
                 }
             }
             //4. start the task
@@ -36,7 +39,7 @@ struct WeatherManager {
         }
     }
 
-    func parseJSON(_ weatherData: Data) {
+    func parseJSON(_ weatherData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
@@ -48,9 +51,11 @@ struct WeatherManager {
             
             let weather = WeatherModel(conditionId: id, cityName: name, description: description, temperature: temp)
             
-            print(temp, name, description, weather.conditionName , id)
+            //print(temp, name, description, weather.conditionName , id)
+            return weather
         } catch {
             print(error)
+            return nil
         }
     }
 

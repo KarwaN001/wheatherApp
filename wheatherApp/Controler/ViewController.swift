@@ -53,5 +53,11 @@ class ViewController: UIViewController , UITextFieldDelegate{
         textField.resignFirstResponder()
     }
     
+    func test(weather: WeatherModel) {
+        DispatchQueue.main.async {
+            print(weather.temperatureString , weather.cityName)
+        }
+    }
+    
 }
 
