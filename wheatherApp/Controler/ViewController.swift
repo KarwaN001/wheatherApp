@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController , UITextFieldDelegate, WeatherManagerDelegate{
+class ViewController: UIViewController {
 
     @IBOutlet weak var SearchField: UITextField!
     @IBOutlet weak var whatherIcon: UIImageView!
@@ -25,9 +25,12 @@ class ViewController: UIViewController , UITextFieldDelegate, WeatherManagerDele
         weatherManager.delegate = self
     }
 
-    
-    
-    @IBAction func SearchButton(_ sender: UIButton) {
+}
+
+//MARK: - UITextFieldDelegate
+
+extension ViewController: UITextFieldDelegate{
+ @IBAction func SearchButton(_ sender: UIButton) {
 //        print(SearchField.text!)
         SearchField.endEditing(true)
     }
@@ -54,8 +57,13 @@ class ViewController: UIViewController , UITextFieldDelegate, WeatherManagerDele
         textField.text = ""
         textField.resignFirstResponder()
     }
+}
 
-    func didUpdateWeather(_ weather: WeatherModel) {
+//MARK: - WeatherManagerDelegate
+
+extension ViewController: WeatherManagerDelegate{
+   
+   func didUpdateWeather(_ weather: WeatherModel) {
         DispatchQueue.main.async {
             self.whetherTempreture.text = "\(weather.temperatureString)°C"
             self.whetherCity.text = weather.cityName
@@ -63,12 +71,12 @@ class ViewController: UIViewController , UITextFieldDelegate, WeatherManagerDele
             self.weatherDescreption.text = weather.description
         }
     }
+   
     //test test test test 
     // func test(weather: WeatherModel) {
     //     DispatchQueue.main.async {
     //         print(weather.temperatureString , weather.cityName)
     //     }
-    // }
-    
-}
+    // }   
 
+}
