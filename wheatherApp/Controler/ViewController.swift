@@ -7,6 +7,7 @@
 // api key : a89bad3a6d3f947a4faaad85523560da
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
@@ -17,12 +18,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var weatherDescreption: UILabel!
     
     var weatherManager = WeatherManager()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         SearchField.delegate = self
         weatherManager.delegate = self
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
     }
 
 }
@@ -80,3 +85,4 @@ extension ViewController: WeatherManagerDelegate{
     // }   
 
 }
+
